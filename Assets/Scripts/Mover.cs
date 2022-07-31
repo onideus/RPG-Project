@@ -22,11 +22,6 @@ public class Mover : MonoBehaviour
         _cam = Camera.main;
     }
 
-    // private void Update()
-    // {
-    //     _agent.destination = target.position;
-    // }
-
     private void OnClickToMove()
     {
         MoveToRay();
@@ -38,8 +33,7 @@ public class Mover : MonoBehaviour
         var hasHit = Physics.Raycast(ray, out var hit);
 
         if (!hasHit) return;
-
-        Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red, 1f);
+        
         _agent.destination = hit.point;
         // _anim.SetBool(IsWalking, true);
     }
